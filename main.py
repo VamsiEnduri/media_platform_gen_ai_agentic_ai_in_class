@@ -7,7 +7,17 @@ if "user" not in st.session_state:
 
 def dashboard():
     st.sidebar.success("welcome user")
-    st.header("dashboard")    
+    opt=st.sidebar.selectbox("choose :-- ",["uploadFiles","viewFiles","Logout"])
+    st.header("dashboard")  
+
+    if opt == "uploadFiles":
+        st.header("upload yr files here")
+        choosedFile=st.file_uploader("choose file",type=["pdf","jpg","jpeg","png","mp3","mp4"]) 
+
+        if choosedFile:
+            st.write(choosedFile.name)
+            st.write(choosedFile.type)
+
 
 def login_function():
     st.header("Login")
