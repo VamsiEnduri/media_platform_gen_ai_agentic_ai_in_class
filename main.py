@@ -1,5 +1,5 @@
 import streamlit as st 
-
+from db_c import conn_obj,cursor_obj
 st.title("Media Platform")
 
 login,signup = st.tabs(
@@ -13,7 +13,6 @@ with login:
         email = st.text_input("Email")
         password = st.text_input("Password",type="password")
         btn=st.form_submit_button("Login")
-
 
 with signup:
     st.header("SignUp")
