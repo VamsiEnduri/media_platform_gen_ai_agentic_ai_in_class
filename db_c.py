@@ -11,9 +11,6 @@ conn_obj=mysql.connector.connect(
 
 cursor_obj=conn_obj.cursor(dictionary=True)
 
-
-
-
 # USERS TABLE
 cursor_obj.execute("""
 CREATE TABLE IF NOT EXISTS users3(
@@ -33,10 +30,10 @@ CREATE TABLE IF NOT EXISTS files3(
     file_type VARCHAR(100),
     file_url TEXT,
     upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY(user_id) REFERENCES users(id)
+    FOREIGN KEY(user_id) REFERENCES users3(id)
 )
 """)
 
-conn.commit()
+conn_obj.commit()
 
 print("Tables Created Successfully")
