@@ -15,7 +15,7 @@ cursor_obj=conn_obj.cursor(dictionary=True)
 
 
 # USERS TABLE
-cursor.execute("""
+cursor_obj.execute("""
 CREATE TABLE IF NOT EXISTS users3(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100),
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS users3(
 """)
 
 # FILES TABLE
-cursor.execute("""
+cursor_obj.execute("""
 CREATE TABLE IF NOT EXISTS files3(
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
