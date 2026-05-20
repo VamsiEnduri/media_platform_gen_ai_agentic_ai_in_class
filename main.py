@@ -39,6 +39,10 @@ def dashboard():
             url=uploaded_dict_obj["secure_url"]             
             st.write(url)
             st.write("file uploaded to cloudinary")
+    elif opt == "Logout":
+        st.session_state.user=None
+        st.success("logout successfully...")
+        st.rerun()
 
 def login_function():
     st.header("Login")
