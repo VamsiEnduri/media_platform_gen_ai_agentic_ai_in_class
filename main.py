@@ -37,3 +37,11 @@ with signup:
         password = st.text_input("Password", type="password")
 
         btn = st.form_submit_button("SignUp")
+        if btn:
+            query="insert into users3(name,email,password) values(%s,%s,%s)"
+            values=(name,email,password)
+            cursor_obj.execute(query,values)
+            conn_obj.commit()
+            st.write("user added successfully ")
+
+
